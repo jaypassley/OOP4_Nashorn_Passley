@@ -66,8 +66,8 @@ public class Converter extends Component {
         @Override
         public void actionPerformed(ActionEvent e) {
 
-            String per = inputTextField.getText();
-            if (per.isEmpty()){
+            String itf = inputTextField.getText();
+            if (itf.isEmpty()){
                 JOptionPane.showMessageDialog(
                         Converter.this,
                         "Input Field Cannot Be Blank!",
@@ -78,17 +78,20 @@ public class Converter extends Component {
 
             if (currencyComboBox.getSelectedIndex() == 0) {
 
-               resultTextField.setText(String.valueOf(inputTextField));
+              double num = Double.parseDouble(inputTextField.getText());
+              resultTextField.setText(String.valueOf(num*129.02));
             }
             else
             if (currencyComboBox.getSelectedIndex() == 1) {
 
-                resultTextField.setText("Canadian Dollar");
+                double num = Double.parseDouble(inputTextField.getText());
+                resultTextField.setText(String.valueOf(num*97.50));
             }
             else
             if (currencyComboBox.getSelectedIndex() == 2) {
 
-                resultTextField.setText("Euro Dollar");
+                double num = Double.parseDouble(inputTextField.getText());
+                resultTextField.setText(String.valueOf(num*164.33));
             }
 
         }

@@ -7,7 +7,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
-public class Converter {
+public class Converter extends Component {
     private JButton convertButton;
     private JButton clearButton;
     private JTextField inputTextField;
@@ -30,6 +30,7 @@ public class Converter {
                         (c == KeyEvent.VK_PERIOD) ||
                         (c == KeyEvent.VK_DELETE))) {
                     e.consume();
+
                 }
             }
 
@@ -64,6 +65,16 @@ public class Converter {
 
         @Override
         public void actionPerformed(ActionEvent e) {
+
+            String per = inputTextField.getText();
+            if (per.isEmpty()){
+                JOptionPane.showMessageDialog(
+                        Converter.this,
+                        "Input Field Cannot Be Blank!",
+                        "No Input To Convert",
+                        JOptionPane.ERROR_MESSAGE);
+            }
+            else
 
             if (currencyComboBox.getSelectedIndex() == 0) {
 
